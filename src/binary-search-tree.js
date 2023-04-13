@@ -1,6 +1,5 @@
-const { NotImplementedError } = require('../extensions/index.js');
 const { Tree } = require('./binaryTree/tree.js');
-const { appendFileSync } = require('node:fs');
+// const { appendFileSync } = require('node:fs');
 
 // const { Node } = require('../extensions/list-tree.js');
 
@@ -18,17 +17,17 @@ class BinarySearchTree {
   }
 
   add(data) {
-    appendFileSync('add.txt', `tree.add1(${data})
-`, { flag: 'a' });
-    this.tree.add1(data);
+    //     appendFileSync('add.txt', `tree.add1(${data})
+    // `, { flag: 'a' });
+    this.tree.add(data);
   }
 
   has(data) {
-    appendFileSync('has.txt', `tree.has(${data})
-`, { flag: 'a' });
+    //     appendFileSync('has.txt', `console.log(tree.has(${data}))
+    // `, { flag: 'a' });
     let has = this.tree.has(data);
-    appendFileSync('hasValue.txt', `ishas(${data})=${has}
-`, { flag: 'a' });
+    //     appendFileSync('hasValue.txt', `ishas(${data})=${has}
+    // `, { flag: 'a' });
     return has;
   }
 
@@ -37,8 +36,10 @@ class BinarySearchTree {
   }
 
   remove(data) {
-    appendFileSync('remove.txt', `tree.remove(${data})
-`, { flag: 'a' });
+    //     appendFileSync('remove.txt', `tree.remove(${data})
+    // `, { flag: 'a' });
+    //     appendFileSync('hasRemoved.txt', `console.log(tree.has(${data}))
+    // `, { flag: 'a' });
     this.tree.remove(data)
   }
 
