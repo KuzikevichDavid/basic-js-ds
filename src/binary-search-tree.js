@@ -1,4 +1,6 @@
 const { NotImplementedError } = require('../extensions/index.js');
+const { Tree } = require('./binaryTree/tree.js');
+const { appendFileSync } = require('node:fs');
 
 // const { Node } = require('../extensions/list-tree.js');
 
@@ -7,40 +9,45 @@ const { NotImplementedError } = require('../extensions/index.js');
 * using Node from extensions
 */
 class BinarySearchTree {
+  constructor() {
+    this.tree = new Tree();
+  }
 
   root() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    return this.tree.root;
   }
 
-  add(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  add(data) {
+    appendFileSync('add.txt', `tree.add1(${data})
+`, { flag: 'a' });
+    this.tree.add1(data);
   }
 
-  has(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  has(data) {
+    appendFileSync('has.txt', `tree.has(${data})
+`, { flag: 'a' });
+    let has = this.tree.has(data);
+    appendFileSync('hasValue.txt', `ishas(${data})=${has}
+`, { flag: 'a' });
+    return has;
   }
 
-  find(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  find(data) {
+    return this.tree.find(data);
   }
 
-  remove(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  remove(data) {
+    appendFileSync('remove.txt', `tree.remove(${data})
+`, { flag: 'a' });
+    this.tree.remove(data)
   }
 
   min() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    return this.tree.min();
   }
 
   max() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    return this.tree.max();
   }
 }
 
